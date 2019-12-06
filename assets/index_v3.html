@@ -5,41 +5,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
   <base target="_blank">
+  <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
   <style>
     body {
       padding: 0 0.5em;
-    }
-    .box {
-      margin-top: 1em;
-    }
-    #txtURL {
-      width: 100%;
-      height: 2em;
-      text-indent: 0.5em;
-      padding: 0.25em 0;
-    }
-    #btnGo {
-      width: 100%;
-      font-size: 1.5em;
+      font-family: sans-serif;
     }
     #list a {
       margin: 1em;
     }
+    .accessWrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .wrapper.block {
+      width: 100%;
+    }
+    #txtURL {
+      border: none;
+      background: none;
+    }
   </style>
 </head>
 <body>
-  <div class="box">
+
+  <div class="block card">
+    <h1>Wow.</h1>
+    <h1>So Internet.</h1>
+    <h1>Much Education.</h1>
+  <div class="accessWrap">
+  <div class="wrapper block">
     <input id="txtURL" type="text" value="www.google.com" autofocus>
   </div>
-  <div class="box">
-    <button id="btnGo">Go</button>
+  <button class="accent block" id="btnGo">Go</button>
   </div>
-  <div class="box">
-    <span>切换线路:</span>
+  <div class="box" style="display: none">
+    <span>Switch Routes:</span>
     <select id="selNode"></select>
   </div>
-  <div class="box" id="list">
+  <div class="box" id="list" style="display: none">
   </div>
+  <p>Of course it's Mingjie's personal use project. <3 MCPS</p>
+</div>
   <script>
     const PAGE_CONF_SET = 110
     const PAGE_CONF_GET = 111
