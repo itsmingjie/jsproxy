@@ -47,6 +47,7 @@
   </div>
   <div class="box" id="list" style="display: none">
   </div>
+  <p>Currently running on default switch route. Please use an access flag to switch to an alternative route.</p>
   <p>Of course it's Mingjie's personal use project. <3 MCPS</p>
 </div>
   <script>
@@ -96,7 +97,6 @@
 
       case SW_READY:
         console.log('sw ready')
-        showIcons()
         sendMsgToSw(PAGE_CONF_GET)
         break
       }
@@ -120,30 +120,6 @@
         return
       }
       ctl.postMessage([cmd, val])
-    }
-
-    const SITE_LIST = [
-      ['google', ''],
-      ['youtube', ''],
-      ['twitter', 'twitter.com/google'],
-      ['flickr', ''],
-      ['quora', 'www.quora.com/topic/JavaScript-programming-language'],
-      ['twitch', 'www.twitch.tv/'],
-      ['reddit', ''],
-      ['wiki', 'zh.wikipedia.org/'],
-      ['gist', 'gist.github.com/'],
-      ['facebook', 'facebook.com/Google/'],
-      ['blogger', ''],
-    ]
-
-    function showIcons() {
-      list.innerHTML = SITE_LIST.map(v => {
-        let [id, url] = v
-        url = url || `www.${id}.com/`
-        return `\
-<a rel="noopener noreferrer" href=./-----https://${url}>\
-<img width=128 height=128 src=__sys__/assets/ico/${id}.png></a>`
-      }).join('')
     }
 
     function addNodeItem(id, text) {
